@@ -1,0 +1,21 @@
+doctype html
+
+head
+  h1(style="margin-top: 5%" align='center') Titre : #{article['titre']}
+
+body
+    div(align='center')
+      b Auteur : #{article['auteur']}
+      p
+      b Résumé : #{article['resume']}
+      p
+      b Contenu :
+      p #{article['contenu']}
+
+      div
+        p
+        a(href="/post/sup/" + article._id)
+          button(type='submit') Supprimer
+        p
+        a(href="/") 
+          button(type='button') Retour

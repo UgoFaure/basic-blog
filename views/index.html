@@ -1,5 +1,26 @@
 doctype html 
 head
-  title XXX
+  title Liste des articles
+  h1(style="margin-top: 5%" align='center') Liste des articles
 body
-  Hello world
+table(class="table", style='width:75%', align='center', border='1')
+  tr
+   th Titre
+   th Date
+   th Auteur
+   th Résumé
+   th [X]
+   
+  each valArticle in article
+    tr
+      td 
+        a(href="post/" + valArticle._id) #{valArticle['titre']}
+      td #{valArticle['date']}
+      td #{valArticle['auteur']}    
+      td #{valArticle['resume']}
+      td 
+        a(href="/post/delete/" + valArticle._id) [X]
+            
+div(align='center' style="margin-top: 5%")
+ form(action='/post/create', method='POST')
+  button(type='submit' style="font-weight: bold") Ajouter un article

@@ -1,0 +1,27 @@
+doctype html
+head
+    title Ajouter un article
+    h1(style="margin-top: 5%" align='center') Ajouter un article
+body
+    div(align='center')
+        form(action='/post/create', method='POST')
+            label Titre :
+            p 
+            input(type='text', name='titre', required)
+            p
+            label Auteur :
+            p 
+            input(type='text', name='auteur', required)
+            p
+            label Résumé :
+            p 
+            input(type='text', name='resume', required)
+            p
+            label Contenu :
+            p 
+            input(type='text', name='contenu', required)
+            p
+            button(type='submit') Ajouter
+            p
+            a(href="/") 
+                    button(type='button') Retour
